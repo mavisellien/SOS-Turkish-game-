@@ -25,15 +25,18 @@ def drawGrid():
     if __name__ == "__main__" : 
       
         # set screen 
-        sc.setup(600, 600) 
+        sc.setup(600, 600)
+
+        sc.tracer(0) 
        
         # set turtle object speed 
-        pen.speed(100) 
+        pen.speed(0) 
        
         # loops for board 
         for i in range(grid_size): 
        
-          # not ready to draw 
+          # not ready to draw
+          pen.hideturtle()
           pen.up() 
        
           # set position for every row 
@@ -49,6 +52,10 @@ def drawGrid():
             draw()  
        
         # hide the turtle 
-        pen.hideturtle()
+
+        sc.update() 
+
+        # Keep the window open
+        sc.mainloop() 
 
 drawGrid()
